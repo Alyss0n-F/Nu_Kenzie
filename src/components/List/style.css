@@ -1,0 +1,14 @@
+ul {
+  margin: 25px 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+@media (min-width: 1200px) {
+  ul {
+    width: 100%;
+  }
+}
