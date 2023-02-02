@@ -8,10 +8,20 @@ export function Form({ listTransactions, setListTransactions }) {
 
   function handleForm(event) {
     event.preventDefault()
-    setListTransactions([
-      ...listTransactions,
-      { value, description, type: entry },
-    ])
+
+    console.log(value)
+    if (value === "" || value === 0) {
+      alert("Insira um valor válido")
+    } else if (description === "") {
+      alert("Insira uma descrição")
+    } else if (entry === "") {
+      alert("Selecione o tipo do valor")
+    } else {
+      setListTransactions([
+        ...listTransactions,
+        { value, description, type: entry },
+      ])
+    }
   }
 
   return (

@@ -20,10 +20,10 @@ export function Input({ setValue, setDescription, setEntry }) {
         <div className="input_and_currency_container">
           <input
             className="input_value"
-            type="text"
+            type="number"
             placeholder="1"
             id="value"
-            onChange={(event) => setValue(parseInt(event.target.value))}
+            onChange={(event) => setValue(Number(event.target.value))}
           />
 
           <p className="currency_display">R$</p>

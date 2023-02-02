@@ -1,7 +1,15 @@
 export function Total({ listTransactions }) {
-  const totalValue = listTransactions.reduce((valorAnterior, valorAtual) => {
-    return valorAtual.value + valorAnterior
-  }, 0)
+  const totalValue =
+    listTransactions
+      .filter((transaction) => transaction.type === "Entrada")
+      .reduce((valorAnterior, valorAtual) => {
+        return valorAtual.value + valorAnterior
+      }, 0) -
+    listTransactions
+      .filter((transaction) => transaction.type === "Saída")
+      .reduce((valorAnterior, valorAtual) => {
+        return valorAtual.value + valorAnterior
+      }, 0)
 
   return (
     <div className="total_container">
